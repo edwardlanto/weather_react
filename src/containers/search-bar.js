@@ -9,11 +9,10 @@ class SearchBar extends Component{
         super(props);
         this.state = { term : ''}
         this.onInputChange = this.onInputChange.bind(this);
-        // This line of code is saying for this instance of SearchBar there is a function called onInputChange, bind that function to SearchBar and replaced onInputChange
-        // You must bind callback functions when it uses the keyword 'this'
         this.onFormSubmit = this.onFormSubmit.bind(this);
 
     }
+    
 
     onInputChange(event){
         this.setState({
@@ -46,12 +45,11 @@ class SearchBar extends Component{
         )
     }
 }
-// Purpose of this function is to take the applications state, and whatever gets returned will show up as props for SearchBar
+// Purpose of this function is to take the applications state, and whatever gets returned will show up as props for SearchBar. EG fetchWeather()
 function mapDispatchToProps(dispatch){
     return bindActionCreators({ fetchWeather }, dispatch);
-    // bindActionCreators binded the function fetchWeather to all reducers and allowed us to use it
+    // bindActionCreators makes sure the function fetchWeather is dispatched through middleware and then given to reducers
 }
 // Connect takes a function which in this case is mapStateToProps and takes a Component and makes it a container
-// By passing null, your telling redux not to care about state
-//
+// mapDispatchToProps must be second argument, by passing null your telling the application not to care about the state
 export default connect(null, mapDispatchToProps)(SearchBar)

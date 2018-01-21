@@ -38,7 +38,6 @@ class WeatherList extends Component {
         return (
             <div>
                 <table className="table table-hover">
-                    
                     <thead>
                         <tr class="headings">
                             <th>Map</th>
@@ -60,10 +59,11 @@ class WeatherList extends Component {
     }
 }
 
+//Takes applications state and passes it as props to Weather List
 function mapStateToProps(state) {
     return {
         weather: state.weather
     }
 }
-// Instead of exporting the normal component your exporting the container component that is connected to redux by using connect
+// Connect makes our container a smart container which is aware of applications state & redux itself.
 export default connect(mapStateToProps)(WeatherList);

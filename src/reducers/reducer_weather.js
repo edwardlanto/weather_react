@@ -11,7 +11,6 @@ export default function(state=[],  action){
         }else{
             return [ action.payload.data, ...state ]; // This says take all entries in the old state and insert it into new array
         }
-        // return state.concat([action.payload.data]); // Returns new instance of state
  
 
     }

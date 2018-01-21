@@ -1,26 +1,16 @@
-# ReduxSimpleStarter
+# Weather React Project #
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+### What is it? ###
 
-### Getting Started
+A React application that takes in a city name and matches it with Open Weather API DB to pull corresponding information. Also creates instance of Google Map and plugs in co-ordinates of searched city to pull up appropriate map location.
 
-There are two methods for getting started with this repo.
+### Demonstrates ### 
 
-#### Familiar with Git?
-Checkout this repo, install dependencies, then start the gulp process with the following:
-
-```
-> git clone https://github.com/StephenGrider/ReduxSimpleStarter.git
-> cd ReduxSimpleStarter
-> npm install
-> npm start
-```
-
-#### Not Familiar with Git?
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
-
-```
-> npm install
-> npm start
-```
-# weather_react
+* Binding of form events 
+* Setting 'State' after value is entered
+* Using constructor to set inital state
+* Making Action Creator to fetch city from API & returning data only matched with specific case
+* Conditional to see if weather city is defined
+* Using and importing Spark Lines Plugin to give visuals of city information
+* Used Redux Promise middleware to stop action and checks if its a Promise, if so, resolve and send unravelled promise
+* Creating Smart Containers to be aware of Redux state using Connect function

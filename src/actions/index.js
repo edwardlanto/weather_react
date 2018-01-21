@@ -14,9 +14,7 @@ export function fetchWeather(city){
     return{
         type: FETCH_WEATHER,
         payload: request
-     
-
-        // Redux promised was used here and was middle ware when the action creator tried to send an action, and before giving to all reducers it 'unravelled' the promise for us and gave all reducers a data response instead of a promise. A promise was used because axios package.
+        // Redux promise was used here as middleware when the action creator tried to send an action, and before giving to all reducers it 'unravelled' the promise for us and gave all reducers a data response instead of a promise. A promise was used because axios package.
         // The reason middleware was good for changing the response from promise to normal data is because if it gave a promise to the reducer, the reducer would have to wait and run its switch statement, but using a promise, the switch statement only runs after the data has been received from API        
     }
      
