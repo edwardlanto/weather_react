@@ -6,7 +6,6 @@ function average(avg) {
     return _.round(_.sum(avg)/avg.length)
 }
 export default (props) => {
-    console.log(props);
     return (
    
         <div>
