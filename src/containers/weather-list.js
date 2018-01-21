@@ -13,7 +13,6 @@ class WeatherList extends Component {
         const { lat , lon } = cityData.city.coord;
        
         // When mapping USE arrow functions
-        // console.log(temp);
         // cityData would be equivalent to each object that contains city, temperature etc.
         return (
             <tr id="city-info" key={cityData.city.id}>
