@@ -14,3 +14,6 @@ A React application that takes in a city name and matches it with Open Weather A
 * Using and importing Spark Lines Plugin to give visuals of city information
 * Used Redux Promise middleware to stop action and checks if its a Promise, if so, resolve and send unravelled promise
 * Creating Smart Containers to be aware of Redux state using Connect function
+
+### DEMO ####
+http://edward-weather-react.herokuapp.com/
