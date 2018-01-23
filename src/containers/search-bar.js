@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// Since SearchBar needs to tell the action creator in Redux to create an action, it must use the connect function
+// Since SearchBar needs to be in contact with Redux, it must use the connect function
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchWeather } from '../actions/index';
