@@ -15,5 +15,8 @@ A React application that takes in a city name and matches it with Open Weather A
 * Used Redux Promise middleware to stop action and checks if its a Promise, if so, resolve and send unravelled promise
 * Creating Smart Containers to be aware of Redux state using Connect function
 
+![screen shot 2018-01-23 at 3 21 24 pm-min](https://user-images.githubusercontent.com/20784807/35298966-d4051580-0051-11e8-9c90-7d8c5bcaa49c.png)
+
+
 ### DEMO ####
 http://edward-weather-react.herokuapp.com/
