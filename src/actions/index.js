@@ -1,7 +1,6 @@
 import axios from 'axios';
 // Axios is a package that can perform AJAX request,    
-
-const API_KEY = '21f48944baa7ff84559ae36bac569a9c';
+import {API_KEY} from './types/';
 const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
 
 // Middleware - A function that can is like a gate before the action gets to reducer that can let it pass, manipulate it, log it or stop it
