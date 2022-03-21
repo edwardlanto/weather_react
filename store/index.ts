@@ -5,11 +5,13 @@ import { createWrapper } from 'next-redux-wrapper';
 import { Action } from 'redux';
 import profileReducer from './slices/profile';
 import productReducer from './slices/product';
+import locationReducer from './slices/location';
 
 const makeStore = () => configureStore({
   reducer: {
     profile: profileReducer,
-    product: productReducer
+    product: productReducer,
+    location: locationReducer
   },
   devTools: true
 });

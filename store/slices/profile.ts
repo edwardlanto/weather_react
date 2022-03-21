@@ -1,16 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { HYDRATE } from 'next-redux-wrapper';
-import { AppState, AppThunk } from '../../store';
+import { AppState, AppThunk } from '..';
 
-export const ProductSlice = createSlice({
-  name: 'product',
+export const ProfileSlice = createSlice({
+  name: 'profile',
 
   initialState: {
     name: null
   },
 
   reducers: {
-    setProductData: (state, action) => {
+    setProfileData: (state, action) => {
       state.name = action.payload;
     }
   },
@@ -19,30 +19,30 @@ export const ProductSlice = createSlice({
     [HYDRATE]: (state, action) => {
       console.log('HYDRATE', action.payload);
 
-      if (!action.payload.product.name) {
+      if (!action.payload.profile.name) {
         return state;
       }
 
-      state.name = action.payload.product.name;
+      state.name = action.payload.profile.name;
     }
   }
 });
 
-export const { setProductData } = ProductSlice.actions;
+export const { setProfileData } = ProfileSlice.actions;
 
-export const selectProduct = (state: AppState) => state.product;
+export const selectProfile = (state: AppState) => state.profile;
 
-export const fetchProduct =
+export const fetchProfile =
     (): AppThunk =>
       async dispatch => {
         const timeoutPromise = (timeout: number) => new Promise(resolve => setTimeout(resolve, timeout));
 
-        await timeoutPromise(1000);
+        await timeoutPromise(200);
 
         dispatch(
-          setProductData('BA DUM DA THUNK')
+          setProfileData('name from thunk')
         );
       };
 
 
-export default ProductSlice.reducer;
+export default ProfileSlice.reducer;
