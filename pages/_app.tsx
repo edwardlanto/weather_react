@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app';
-import { wrapper } from '../app/store';
+import { wrapper } from '../store';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;

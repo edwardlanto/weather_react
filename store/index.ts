@@ -1,23 +1,46 @@
+import {
+  Action,
+  AnyAction,
+  combineReducers,
+  configureStore,
+  ThunkAction,
+} from '@reduxjs/toolkit';
+import { createWrapper, HYDRATE } from 'next-redux-wrapper';
+import { counterReducer } from '../features/counter';
+import { kanyeReducer } from '../features/kanye';
 
-   
-import { configureStore, ThunkAction } from '@reduxjs/toolkit';
-import { createWrapper } from 'next-redux-wrapper';
-import { Action } from 'redux';
-import profileReducer from './slices/profile';
-import productReducer from './slices/product';
-import locationReducer from './slices/location';
-
-const makeStore = () => configureStore({
-  reducer: {
-    profile: profileReducer,
-    product: productReducer,
-    location: locationReducer
-  },
-  devTools: true
+const combinedReducer = combineReducers({
+  counter: counterReducer,
+  kanyeQuote: kanyeReducer,
 });
 
-export type AppStore = ReturnType<typeof makeStore>;
-export type AppState = ReturnType<AppStore['getState']>;
-export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, AppState, unknown, Action>;
+const reducer = (state: ReturnType<typeof combinedReducer>, action: AnyAction) => {
+  if (action.type === HYDRATE) {
+    const nextState = {
+      ...state, // use previous state
+      ...action.payload, // apply delta from hydration
+    };
+    return nextState;
+  } else {
+    return combinedReducer(state, action);
+  }
+};
 
-export const wrapper = createWrapper<AppStore>(makeStore);
+export const makeStore = () =>
+  configureStore({
+    devTools: true,
+    reducer,
+  });
+
+type Store = ReturnType<typeof makeStore>;
+
+export type AppDispatch = Store['dispatch'];
+export type RootState = ReturnType<Store['getState']>;
+export type AppThunk<ReturnType = void> = ThunkAction<
+  ReturnType,
+  RootState,
+  unknown,
+  Action<string>
+>;
+
+export const wrapper = createWrapper(makeStore, { debug: true });
