@@ -17,11 +17,11 @@ const IndexPage: NextPage = () => {
       navigator.geolocation.getCurrentPosition(location => {
         console.log(location.coords.longitude)
         dispatch(getWeather(location.coords));
-      }, function (error) {
+      }, function () {
         dispatch(setError("User denied geolocation, please active your location to use our services."))
       });
     }
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
