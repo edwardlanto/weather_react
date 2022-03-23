@@ -24,7 +24,7 @@ function WeatherCard(props:IProps) {
         <>
         <div onClick={setCurrentEvent} className={`${weather == current ? 'flex flex-col w-1/4 bg-gray-100 text-black rounded-lg pb-4 cursor-pointer' : 'cursor-pointer flex flex-col w-1/4 bg-gray-900 rounded-lg'}`}>
           <div className="text-center pt-2 mb-2">
-          <img src={`http://openweathermap.org/img/wn/${weather.weather?.[0].icon}@4x.png`} />
+          <img src={`http://openweathermap.org/img/wn/${weather.weather?.[0].icon}@4x.png`} alt="Weather Icon"/>
            </div>
           <div className="text-center">
             <b className="font-normal">{moment(weather.dt_txt, 'YYYY-MM-DD HH:mm:ss').format('dddd').substr(0, 3)}</b><br />

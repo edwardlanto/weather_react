@@ -46,7 +46,7 @@ export default function SearchBar() {
     <>
       <div>
         {loadError && (
-          <div>Google Map script can't be loaded, please reload the page</div>
+          <div>Google Map script can&quot;t be loaded, please reload the page</div>
         )}
 
         {isLoaded && (

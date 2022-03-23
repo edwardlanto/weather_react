@@ -60,7 +60,7 @@ const IndexPage: NextPage = () => {
                             </p>
                           </div>
                           <div>
-                            <img src={`http://openweathermap.org/img/wn/${current.weather?.[0].icon}@4x.png`} />
+                            <img src={`http://openweathermap.org/img/wn/${current.weather?.[0].icon}@4x.png`} alt="Current weather logo"/>
                             <strong className="leading-none text-6xl block font-weight-bolder">{Math.ceil(current.main?.temp)}ºC</strong>
                             <b className="text-2xl block font-bold">{current.weather?.[0].main}
                             </b>
