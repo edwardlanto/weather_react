@@ -4,25 +4,22 @@ import {
 } from '@reduxjs/toolkit';
 import axios from 'axios';
 import type { RootState } from '../../store';
-import { setCurrent, requestLocation } from './actions'
-import { useAppSelector } from '../../hooks';
+import { setCurrent, requestLocation, setError } from './actions'
+
 interface ICity {
   name: string,
   country: string,
 }
 
-interface ICoords{
-
-}
-
 export type WeatherState = {
   list: any[],
   pending: boolean;
-  error: boolean;
+  error: boolean,
+  errorMessage: string
   current: any,
   city: ICity,
   latitude: number,
-  longitude: number
+  longitude: number,
 };
 
 interface ICoords {
@@ -33,15 +30,16 @@ interface ICoords {
 
 const initialState: WeatherState = {
   list: [],
-  pending: false,
-  error: false,
+  pending: true,
+  error: null,
   current: {},
   city: {
     name: "",
     country: ""
   },
   latitude: 0,
-  longitude: 0
+  longitude: 0,
+  errorMessage: ""
 };
 
 export const getWeather = createAsyncThunk('weather/get', async (coords: ICoords) => {
@@ -90,6 +88,9 @@ export const WeatherSlice = createSlice({
       .addCase(requestLocation, (state, { payload}) => {
         state.latitude = payload.latitude;
         state.longitude = payload.longitude;
+      })
+      .addCase(setError, (state, { payload }) => {
+        state.error = payload;
       })
   },
 });
