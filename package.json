@@ -1,36 +1,37 @@
 {
   "name": "googleclone_nextjs",
-  "version": "0.1.0",
   "private": true,
   "scripts": {
   "dev": "next dev",
   "build": "next build",
   "start": "next start",
-  "lint": "next lint",
-  "cypress": "cypress open"
+  "lint": "next lint"
   },
   "dependencies": {
-  "@reduxjs/toolkit": "^1.8.1",
-  "@types/jest": "^27.4.1",
-  "cypress": "^9.5.3",
-  "next": "12.1.4",
-  "react": "18.0.0",
-  "react-dom": "18.0.0"
-  },
-  "devDependencies": {
-  "@material-ui/core": "4.12.3",
-  "@material-ui/icons": "4.11.2",
-  "@types/node": "^17.0.23",
-  "axios": "0.26.1",
-  "next": "9.4.1",
-  "next-redux-wrapper": "^7.0.2",
+  "@react-google-maps/api": "^2.7.0",
+  "@reduxjs/toolkit": "^1.8.0",
+  "axios": "^0.26.1",
+  "moment": "^2.29.1",
+  "next": "latest",
+  "next-redux-wrapper": "^7.0.5",
   "react": "^17.0.2",
   "react-dom": "^17.0.2",
-  "react-redux": "^7.2.8",
-  "react-router-dom": "6.3.0",
-  "redux": "4.0.5",
-  "redux-devtools-extension": "2.13.8",
-  "redux-thunk": "2.3.0",
-  "typescript": "^4.6.3"
+  "react-google-maps": "^9.4.5",
+  "react-google-places-autocomplete": "^3.3.4",
+  "react-places-autocomplete": "^7.3.0",
+  "react-redux": "^7.2.6",
+  "redux": "^4.1.2"
+  },
+  "devDependencies": {
+  "@types/node": "17.0.4",
+  "@types/react": "17.0.38",
+  "autoprefixer": "^10.4.0",
+  "eslint": "8.11.0",
+  "eslint-config-next": "12.1.0",
+  "postcss": "^8.4.5",
+  "prettier": "^2.5.1",
+  "prettier-plugin-tailwindcss": "^0.1.1",
+  "tailwindcss": "^3.0.7",
+  "typescript": "4.5.4"
   }
   }
